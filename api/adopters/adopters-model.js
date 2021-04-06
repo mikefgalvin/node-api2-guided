@@ -12,7 +12,6 @@ module.exports = {
 };
 
 function find(query) {
-  console.log(query.limit)
   const { page = 1, limit = 5, sortby = 'id', sortdir = 'asc' } = query;
   const offset = limit * (page - 1);
 

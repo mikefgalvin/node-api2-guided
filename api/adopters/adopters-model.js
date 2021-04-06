@@ -12,10 +12,11 @@ module.exports = {
 };
 
 function find(query) {
-  const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query;
+  console.log(query.limit)
+  const { page = 1, limit = 5, sortby = 'id', sortdir = 'asc' } = query;
   const offset = limit * (page - 1);
 
-  const rows = db('adopters')
+  const rows = db('adopters') // select from adopters
     .orderBy(sortby, sortdir)
     .limit(limit)
     .offset(offset);
